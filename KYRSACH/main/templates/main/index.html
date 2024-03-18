@@ -1,57 +1,67 @@
-pip install pip
+
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Главное меню"</title>
+    <title>"PrimeFashion"</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100">
-    <div class="container mx-auto">
-        <header class="py-6">
-            <h1 class="text-3xl font-bold text-center"></h1>
-        </header>
+        <nav class="bg-black py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white text-xl font-bold">PrimeFashion</div>
+            <button class="text-white focus:outline-none sm:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <ul class="hidden sm:flex space-x-4 text-white">
+                <li><a href="#" class="hover:text-gray-300">Верхняя одежда</a></li>
+                <li><a href="#" class="hover:text-gray-300">Нижняя одежда</a></li>
+            </ul>
+            <button class="hidden sm:block text-white focus:outline-none">Вход / Регистрация</button>
+        </div>
+    </nav>
 
-        <main class="flex justify-center">
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                <div class="bg-white shadow-md rounded-lg p-4">
-                    <img src="https://via.placeholder.com/150" alt="" class="w-full mb-4">
-                    <h2 class="text-lg font-semibold"></h2>
-                    <p class="text-sm text-gray-600">: $20</p>
-                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                </div>
+    <!-- Бургер меню -->
+    <div class="sm:hidden bg-gray-800 py-2">
+        <ul class="flex flex-col space-y-2 text-white">
+            <li><a href="#" class="hover:text-gray-300">Верхняя одежда</a></li>
+            <li><a href="#" class="hover:text-gray-300">Нижняя одежда</a></li>
+        </ul>
+    </div>
 
-                <div class="bg-white shadow-md rounded-lg p-4">
-                    <img src="https://via.placeholder.com/150" alt="" class="w-full mb-4">
-                    <h2 class="text-lg font-semibold"></h2>
-                    <p class="text-sm text-gray-600">: $40</p>
-                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                </div>
-
-                <div class="bg-white shadow-md rounded-lg p-4">
-                    <img src="https://via.placeholder.com/150" alt="" class="w-full mb-4">
-                    <h2 class="text-lg font-semibold"></h2>
-                    <p class="text-sm text-gray-600">: $20</p>
-                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                </div>
-
-                <div class="bg-blue-500 shadow-md rounded-lg p-6">
-                    <img class="float-right hover:float-left" src="" />
-                    <h2 class="text-lg font-sans"></h2>
-                    <button class="bg-gray-100 hover:bg-blue-700 text-red-700 font-bold py-2 px-4 rounded">
-                        сохранить изменение
-                    </button>
-                </div>
-
-
+    <!-- Сборка -->
+    <div class="container mx-auto py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Продуктовая карта -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <div class="text-xl font-semibold mb-2">Футболка</div>
+                <img src="https://via.placeholder.com/300" alt="Футболка" class="mb-2">
+                <div class="text-gray-700">$20</div>
             </div>
-          
+
+            <!-- Продуктовая карта -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <div class="text-xl font-semibold mb-2">Джинсы</div>
+                <img src="https://via.placeholder.com/300" alt="Джинсы" class="mb-2">
+                <div class="text-gray-700">$30</div>
+            </div>
+
+            <!-- Продуктовая карта -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <div class="text-xl font-semibold mb-2">Куртка</div>
+                <img src="https://via.placeholder.com/300" alt="Куртка" class="mb-2">
+                <div class="text-gray-700">$50</div>
+            </div>
+        </div>
+    </div>
+
         </main>
 
         <footer class="py-6 text-center text-gray-600">
