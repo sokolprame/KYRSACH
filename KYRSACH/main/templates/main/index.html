@@ -1,52 +1,96 @@
-pip install pip
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Приемная комиссия КГнУ</title>
+    <!-- Подключение стилей Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100">
-    <div class="container mx-auto">
-        <header class="py-6">
-            <h1 class="text-3xl font-bold text-center"></h1>
-        </header>
-
-        <main class="flex justify-center">
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                <div class="bg-white shadow-md rounded-lg p-4">
-                    <img src="https://via.placeholder.com/150" alt="" class="w-full mb-4">
-                    <h2 class="text-lg font-semibold"></h2>
-                    <p class="text-sm text-gray-600">: $20</p>
-                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                </div>
-
-                <div class="bg-white shadow-md rounded-lg p-4">
-                    <img src="https://via.placeholder.com/150" alt="" class="w-full mb-4">
-                    <h2 class="text-lg font-semibold"></h2>
-                    <p class="text-sm text-gray-600">: $40</p>
-                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                </div>
-
-                <div class="bg-blue-500 shadow-md rounded-lg p-6">
-                    <img class="float-right hover:float-left" src="" />
-                    <h2 class="text-lg font-sans"></h2>
-                    <button class="bg-gray-100 hover:bg-blue-700 text-red-700 font-bold py-2 px-4 rounded">
-                        сохранить изменение
-                    </button>
-                </div>
-            </div>
-        </main>
-
-        <footer class="py-6 text-center text-gray-600">
-            &copy; 2024
-        </footer>
+<body class="bg-gray-200">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-8">Информация о поступлении в КГнУ</h1>
+        <!-- Блок с программами -->
+        <ol class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Бакалавриат и специалитет -->
+            <li class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                <a href="/programs/bakalavriat/" class="block">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Бакалавриат, специалитет</h3>
+                        <div class="flex items-center">
+                            <span class="text-gray-600 mr-2">Подробнее</span>
+                            <svg class="w-4 h-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M7.293 4.293a1 1 0 011.414 1.414L6.414 10l2.293 2.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3zM14.293 10a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 111.414-1.414l3 3z" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <!-- Магистратура -->
+            <li class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                <a href="/programs/magistratura/" class="block">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Магистратура</h3>
+                        <div class="flex items-center">
+                            <span class="text-gray-600 mr-2">Подробнее</span>
+                            <svg class="w-4 h-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M7.293 4.293a1 1 0 011.414 1.414L6.414 10l2.293 2.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3zM14.293 10a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 111.414-1.414l3 3z" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <!-- Аспирантура -->
+            <li class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                <a href="/programs/aspirantura/" class="block">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Аспирантура</h3>
+                        <div class="flex items-center">
+                            <span class="text-gray-600 mr-2">Подробнее</span>
+                            <svg class="w-4 h-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M7.293 4.293a1 1 0 011.414 1.414L6.414 10l2.293 2.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3zM14.293 10a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 111.414-1.414l3 3z" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ol>
     </div>
+
 </body>
 
 </html>
+
+            </a>
+        </div>
+<!-- Программа Ординатура -->
+    </div>
+<div class="container mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Программа" -->
+        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+            <a href="/programs/akademicheskaya-gimnaziya/" class="block">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Академическая гимназия (общее образование)</h3>
+                    <div class="flex items-center">
+                        <span class="text-gray-600 mr-2">Подробнее</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Программа "Среднее профессиональное образование" -->
+        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+            <a href="/programs/professional-education/" class="block">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Среднее профессиональное образование</h3>
+                    <div class="flex items-center">
+                        <span class="text-gray-600 mr-2">Подробнее</span>
+                        <svg class="w-4 h-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7.293 4.293a1 1 0 011.414 1.414L6.414 10l2.293 2.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3zM14.293 10a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 111.414-1.414l3 3z" /></svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
