@@ -9,65 +9,59 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100">
-        <nav class="bg-black py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-white text-xl font-bold">₽RIMEFA$HION</div>
-            <button class="text-white focus:outline-none sm:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-            <ul class="hidden sm:flex space-x-4 text-white">
-                <li><a href="#" class="hover:text-gray-300">Верхняя одежда</a></li>
-                <li><a href="#" class="hover:text-gray-300">Нижняя одежда</a></li>
-            </ul>
-            <button class="hidden sm:block text-white focus:outline-none">Вход / Регистрация</button>
+<body class="bg-black">
+    <!-- Navigation -->
+    <nav class="bg-gray-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-xl font-bold text-white">₽RIMEFA$HION</a>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-800 hover:text-gray-600">Главная</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-gray-600">О нас</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-gray-600">Контакты</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Бургер меню -->
-    <div class="sm:hidden bg-gray-800 py-2">
-        <ul class="flex flex-col space-y-2 text-white">
-            <li><a href="#" class="hover:text-gray-300">Верхняя одежда</a></li>
-            <li><a href="#" class="hover:text-gray-300">Нижняя одежда</a></li>
-        </ul>
-    </div>
-
-    <!-- Сборка -->
-    <div class="container mx-auto py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Продуктовая карта -->
-            <div class="bg-white rounded-lg shadow-md p-4">
-                <div class="text-xl font-semibold mb-2">Футболка</div>
-                <img src="https://via.placeholder.com/300" alt="Футболка" class="mb-2">
-                <div class="text-gray-700">$20</div>
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Онлайн магазин</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Product Card -->
+            <div class="bg-white shadow-md p-4 rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">Название товара</h2>
+                <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                <p class="text-gray-700 font-semibold">Цена: $19.99</p>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Добавить в корзину</button>
             </div>
-
-            <!-- Продуктовая карта -->
-            <div class="bg-white rounded-lg shadow-md p-4">
-                <div class="text-xl font-semibold mb-2">Джинсы</div>
-                <img src="https://via.placeholder.com/300" alt="Джинсы" class="mb-2">
-                <div class="text-gray-700">$30</div>
-            </div>
-
-            <!-- Продуктовая карта -->
-            <div class="bg-white rounded-lg shadow-md p-4">
-                <div class="text-xl font-semibold mb-2">Куртка</div>
-                <img src="https://via.placeholder.com/300" alt="Куртка" class="mb-2">
-                <div class="text-gray-700">$50</div>
-            </div>
+            <!-- Repeat Product Cards for other products -->
         </div>
     </div>
 
-        </main>
-
-        <footer class="py-6 text-center text-gray-600">
-            &copy; 2024
-        </footer>
+    <!-- Featured Products -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Популярные товары</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Featured Product Card -->
+            <div class="bg-white shadow-md p-4 rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">Название популярного товара</h2>
+                <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                <p class="text-gray-700 font-semibold">Цена: $29.99</p>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <!-- Repeat Featured Product Cards for other products -->
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 ₽RIMEFA$HION Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
