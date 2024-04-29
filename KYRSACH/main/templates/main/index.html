@@ -5,31 +5,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"₽RIMEFA$HION"</title>
+    <title>₽RIMEFA$HION</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-black">
     <!-- Navigation -->
-    <nav class="bg-gray-50 shadow-lg">
+    <nav class="bg-black shadow-lg">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <a href="#" class="text-xl font-bold text-white">₽RIMEFA$HION</a>
                 <ul class="flex space-x-4">
-                    <li><a href="#" class="text-gray-800 hover:text-gray-600">Главная</a></li>
-                    <li><a href="#" class="text-gray-800 hover:text-gray-600">О нас</a></li>
-                    <li><a href="#" class="text-gray-800 hover:text-gray-600">Контакты</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-600">Главная</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-600">О нас</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-600">Контакты</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold text-gray-800 mb-4">Онлайн магазин</h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div class="container mx-auto px-4 py-8 snap-x snap-mandatory">
+        <h1 class="text-3xl font-bold text-white mb-4">Онлайн магазин</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" style="min-height: 500px;">
             <!-- Product Card -->
-            <div class="bg-white shadow-md p-4 rounded-lg">
+            <div class="bg-white shadow-md p-4 rounded-lg snap-always snap-center flex flex-col justify-between">
+                <div>
+                    <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Название товара</h2>
+                    <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                    <p class="text-gray-700 font-semibold">Цена: $19.99</p>
+                </div>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+
+            <div class="bg-white shadow-md p-4 rounded-lg snap-always snap-center flex flex-col justify-between">
+                <div>
+                    <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Название товара</h2>
+                    <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                    <p class="text-gray-700 font-semibold">Цена: $19.99</p>
+                </div>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+
+            <div class="bg-white shadow-md p-4 rounded-lg snap-always snap-center flex flex-col justify-between">
+                <div>
+                    <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Название товара</h2>
+                    <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                    <p class="text-gray-700 font-semibold">Цена: $19.99</p>
+                </div>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+
+            <div class="bg-white shadow-md p-4 rounded-lg snap-always snap-center flex flex-col justify-between">
+                <div>
+                    <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Название товара</h2>
+                    <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                    <p class="text-gray-700 font-semibold">Цена: $19.99</p>
+                </div>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+
+
+            <div class="bg-white shadow-md p-4 rounded-lg snap-always snap-center">
                 <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full mb-4">
                 <h2 class="text-xl font-semibold text-gray-800">Название товара</h2>
                 <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
@@ -39,6 +80,8 @@
             <!-- Repeat Product Cards for other products -->
         </div>
     </div>
+
+
 
     <!-- Featured Products -->
     <div class="container mx-auto px-4 py-8">
@@ -55,6 +98,8 @@
             <!-- Repeat Featured Product Cards for other products -->
         </div>
     </div>
+
+    
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-4">
