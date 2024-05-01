@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base {
-    html {
-        font-family: "Proxima Nova", system-ui, sans-serif;
+@font-face {
+        font-family: 'Rubik_Wet_Paint';
+        src: url('C:/Users/Юрец/source/repos/KYRSACH/RubikWetPaint-Regular.tff') format('tff');
+        /* Добавьте другие форматы (woff, ttf) при необходимости */
+        font-weight: 400;
+        font-style: normal;
     }
-}
-body {
-    @apply bg-gray-100;
-}
+
