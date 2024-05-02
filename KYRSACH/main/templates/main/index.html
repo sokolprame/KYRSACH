@@ -9,76 +9,83 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-green-700">
-    <div class="container mx-auto p-8">
-        <h1 class="text-3xl font-bold mb-8">Информация о поступлении в КГнУ</h1>
-        <!-- Блок с программами -->
-        <ol class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <!-- Бакалавриат и специалитет -->
-            <li class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
-                <a href="/programs/bakalavriat/" class="block p-4">
-                    <h3 class="text-xl font-semibold mb-2">Бакалавриат, специалитет</h3>
-                    <div class="flex items-center">
-                        <span class="text-gray-600 mr-2">Подробнее</span>
-                        <svg class="w-4 h-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M7.293 4.293a1 1 0 011.414 1.414L6.414 10l2.293 2.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3zM14.293 10a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 111.414-1.414l3 3z" />
-                        </svg>
-                    </div>
-                </a>
-            </li>
-            <!-- Магистратура -->
-            <li class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
-                <a href="/programs/magistratura/" class="block p-4">
-                    <h3 class="text-xl font-semibold mb-2">Магистратура</h3>
-                    <div class="flex items-center">
-                        <span class="text-gray-600 mr-2">Подробнее</span>
-                        <svg class="w-4 h-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M7.293 4.293a1 1 0 011.414 1.414L6.414 10l2.293 2.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3zM14.293 10a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 111.414-1.414l3 3z" />
-                        </svg>
-                    </div>
-                </a>
-            </li>
-            <!-- Аспирантура -->
-            <li class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
-                <a href="/programs/aspirantura/" class="block p-4">
-                    <h3 class="text-xl font-semibold mb-2">Аспирантура</h3>
-                    <div class="flex items-center">
-                        <span class="text-gray-600 mr-2">Подробнее</span>
-                        <svg class="w-4 h-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M7.293 4.293a1 1 0 011.414 1.414L6.414 10l2.293 2.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3zM14.293 10a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 111.414-1.414l3 3z" />
-                        </svg>
-                    </div>
-                </a>
-            </li>
-        </ol>
-    </div>
-    <!-- Программа Ординатура -->
-    <div class="container mx-auto">
+<body class="bg-green-50">
+    <!-- Навигационная панель -->
+    <nav class="bg-gray-950">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-xl font-face text-white">₽RIMEFA$HION</a>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-white hover:text-gray-600 font-face">Абитуриентам</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-600 font-face">Главная</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-600 font-face ">О нас</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-600 font-face">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основное содержимое -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-face text-white mb-4">Направления</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <!-- Программа "Академическая гимназия" -->
-            <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
-                <a href="/programs/akademicheskaya-gimnaziya/" class="block p-4">
-                    <h3 class="text-xl font-semibold mb-2">Академическая гимназия (общее образование)</h3>
-                    <div class="flex items-center">
-                        <span class="text-gray-600 mr-2">Подробнее</span>
-                    </div>
-                </a>
+            <!-- Карточка товара -->
+            <div class="bg-white shadow-md p-4 rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Изображение товара" class="w-full mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">Название товара</h2>
+                <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                <p class="text-gray-700 font-semibold">Цена: $19.99</p>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Подробнее</button>
             </div>
-            <!-- Программа "Среднее профессиональное образование" -->
-            <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
-                <a href="/programs/professional-education/" class="block p-4">
-                    <h3 class="text-xl font-semibold mb-2">Среднее профессиональное образование</h3>
-                    <div class="flex items-center">
-                        <span class="text-gray-600 mr-2">Подробнее</span>
-                        <svg class="w-4 h-4 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M7.293 4.293a1 1 0 011.414 1.414L6.414 10l2.293 2.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3zM14.293 10a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 111.414-1.414l3 3z" />
-                        </svg>
-                    </div>
-                </a>
-            </div>
+            <!-- Повторите карточки товаров для других продуктов -->
         </div>
     </div>
 
-</body>
+    <!-- Преподователи -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Преподаватели</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Карточка популярного товара -->
+            <div class="bg-white shadow-md p-4 rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Изображение товара" class="w-full mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">ФИО преподователя</h2>
+                <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                <p class="text-gray-700 font-semibold">Цена: $29.99</p>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Подробнее</button>
+            </div>
 
+            <div class="bg-white shadow-md p-4 rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Изображение товара" class="w-full mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">ФИО преподователя</h2>
+                <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                <p class="text-gray-700 font-semibold">Цена: $29.99</p>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Подробнее</button>
+            </div>
+
+            <div class="bg-white shadow-md p-4 rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Изображение товара" class="w-full mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">ФИО преподователя</h2>
+                <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                <p class="text-gray-700 font-semibold">Цена: $29.99</p>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Подробнее</button>
+            </div>
+
+            <div class="bg-white shadow-md p-4 rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Изображение товара" class="w-full mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">ФИО преподователя</h2>
+                <p class="text-gray-700 mb-2">Описание товара здесь. Можно добавить несколько строк.</p>
+                <p class="text-gray-700 font-semibold">Цена: $29.99</p>
+                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Подробнее</button>
+            </div>
+            <!-- Повторите карточки популярных товаров для других продуктов -->
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Все права защищены.</p>
+        </div>
+    </footer>
+</body>
 </html>
