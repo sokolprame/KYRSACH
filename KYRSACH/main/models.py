@@ -8,6 +8,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     color = models.CharField(max_length=50)
     size = models.CharField(max_length=10)
+
+class UserUpdate(models.Model):
     
     def __str__(self):
         return f'{self.title} {self.size}'
