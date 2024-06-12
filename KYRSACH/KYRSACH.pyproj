@@ -5,7 +5,7 @@
     <Name>KYRSACH</Name>
     <RootNamespace>KYRSACH</RootNamespace>
     <TestFramework>Pytest</TestFramework>
-    <InterpreterId>MSBuild|env3|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -65,11 +65,19 @@
     <Folder Include="KYRSACH\" />
     <Folder Include="main\" />
     <Folder Include="main\migrations\" />
+    <Folder Include="main\static\" />
+    <Folder Include="main\static\js\" />
+    <Folder Include="main\static\image\" />
     <Folder Include="main\templates\" />
     <Folder Include="main\templates\main\" />
+    <Folder Include="main\templates\registration\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="main\static\js\scripts.js" />
     <Content Include="main\templates\main\index.html" />
+    <Content Include="main\templates\main\login.html" />
+    <Content Include="main\templates\main\logout.html" />
+    <Content Include="main\templates\main\register.html" />
     <Content Include="main\templates\main\styles.css" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
