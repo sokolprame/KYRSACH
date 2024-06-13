@@ -14,8 +14,7 @@
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <StartupFile>manage.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>products;products</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <WebBrowserUrl>http://localhost</WebBrowserUrl>
     <LaunchProvider>Django launcher</LaunchProvider>
@@ -38,6 +37,14 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="goods\admin.py" />
+    <Compile Include="goods\apps.py" />
+    <Compile Include="goods\migrations\__init__.py" />
+    <Compile Include="goods\models.py" />
+    <Compile Include="goods\tests.py" />
+    <Compile Include="goods\urls.py" />
+    <Compile Include="goods\views.py" />
+    <Compile Include="goods\__init__.py" />
     <Compile Include="main\admin.py" />
     <Compile Include="main\apps.py" />
     <Compile Include="main\migrations\__init__.py" />
@@ -62,6 +69,8 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="goods\" />
+    <Folder Include="goods\migrations\" />
     <Folder Include="KYRSACH\" />
     <Folder Include="main\" />
     <Folder Include="main\migrations\" />
@@ -77,7 +86,7 @@
     <Content Include="main\templates\main\index.html" />
     <Content Include="main\templates\main\login.html" />
     <Content Include="main\templates\main\logout.html" />
-    <Content Include="main\templates\main\register.html" />
+    <Content Include="main\templates\registration\register.html" />
     <Content Include="main\templates\main\styles.css" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
