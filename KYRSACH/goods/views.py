@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
-def catalog(request):
-    return render()
+def index(request):
+    products = Product.objects.all()
+    return render(request, 'index.html', {'products': products})
 
-def preoduct(request):
-    return render()

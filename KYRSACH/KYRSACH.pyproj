@@ -86,6 +86,7 @@
   <ItemGroup>
     <Content Include="goods\templates\main\index.html" />
     <Content Include="goods\templates\main\product.html" />
+    <Content Include="goods\templates\main\purchase.html" />
     <Content Include="main\static\js\scripts.js" />
     <Content Include="main\templates\main\index.html" />
     <Content Include="main\templates\main\login.html" />

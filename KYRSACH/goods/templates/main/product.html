@@ -1,2 +1,29 @@
-{% extends "main/index.html"%}
-{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Детали продукта</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="flex items-center justify-between bg-gray-800 px-6 py-4">
+        <div class="header-logo">PrimeFashion</div>
+        <nav class="flex space-x-4">
+            <a href="{% url 'index' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Каталог</a>
+        </nav>
+    </header>
+    <div class="container mx-auto px-6 py-8">
+        <div class="flex">
+            <div class="w-1/2">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded">
+            </div>
+            <div class="w-1/2 pl-8">
+                <h1 class="text-3xl font-bold">{{ product.name }}</h1>
+                <p class="mt-4">{{ product.description }}</p>
+                <p class="mt-4 text-xl font-bold">Цена: ${{ product.price }}</p>
+                <a href="{% url 'purchase' product.id %}" class="bg-green-500 text-white py-2 px-4 rounded mt-4 inline-block">Купить</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

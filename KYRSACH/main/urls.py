@@ -10,5 +10,6 @@ from django.shortcuts import render, redirect
 
 urlpatterns = [
     path('', views.index),
-    path('/catalog', include('goods.urls', namespace='catalog'))
+    path('/catalog', include('goods.urls', namespace='catalog')),
+    path('/accounts/', include('django.contrib.auth.urls')),
 ]
