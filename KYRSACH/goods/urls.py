@@ -1,12 +1,8 @@
 from django.urls import path
-from django.contrib.auth import views as auth_views
-from goods import views
-import goods
-
-
-app_name = 'goods'
+from .views import product_list, product_detail, purchase
 
 urlpatterns = [
-    path('', views.catalog, name='catalog'),
-    path('product/', views.catalog, name='product'),
+    path('', product_list, name='product_list'),
+    path('product/<int:pk>/', product_detail, name='product_detail'),
+    path('purchase/<int:pk>/', purchase, name='purchase'),
 ]

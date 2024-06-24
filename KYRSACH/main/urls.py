@@ -1,15 +1,10 @@
-from lib2to3.pygram import pattern_grammar
-from django.urls import include, path
-from django.contrib.auth import views as auth_views
-from . import views
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
-
-
+from django.contrib.auth import login
+from django.urls import path
+from .views import index, register, login, logout
 
 urlpatterns = [
-    path('', views.index),
-    path('/catalog', include('goods.urls', namespace='catalog')),
-    path('/accounts/', include('django.contrib.auth.urls')),
+    path('', index, name='index'),
+    path('register/', register, name='register'),
+    path('login/', login, name='login'), 
+    path('logout/', logout, name='logout'),
 ]

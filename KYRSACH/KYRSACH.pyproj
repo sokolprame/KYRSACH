@@ -47,6 +47,7 @@
     <Compile Include="goods\__init__.py" />
     <Compile Include="main\admin.py" />
     <Compile Include="main\apps.py" />
+    <Compile Include="main\forms.py" />
     <Compile Include="main\migrations\__init__.py" />
     <Compile Include="main\models.py" />
     <Compile Include="main\tests.py" />
@@ -81,17 +82,17 @@
     <Folder Include="main\static\image\" />
     <Folder Include="main\templates\" />
     <Folder Include="main\templates\main\" />
-    <Folder Include="main\templates\registration\" />
+    <Folder Include="main\templates\register\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="goods\templates\main\index.html" />
+    <Content Include="goods\templates\main\catalog.html" />
     <Content Include="goods\templates\main\product.html" />
     <Content Include="goods\templates\main\purchase.html" />
     <Content Include="main\static\js\scripts.js" />
     <Content Include="main\templates\main\index.html" />
     <Content Include="main\templates\main\login.html" />
     <Content Include="main\templates\main\logout.html" />
-    <Content Include="main\templates\registration\register.html" />
+    <Content Include="main\templates\register\register.html" />
     <Content Include="main\templates\main\styles.css" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />

@@ -1,22 +1,24 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponse
-
+from .forms import UserRegisterForm
 
 def index(request):
     return render(request, 'main/index.html')
 
+def logout(request):
+    auth_logout(request)
+    return render(request, 'main/index.html') 
+
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('home')  # Убедитесь, что у вас есть маршрут 'home' в urls.py
+            return redirect('index')
     else:
-        form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+        form = UserRegisterForm()
+    return render(request, 'main/register/register.html', {'form': form})
