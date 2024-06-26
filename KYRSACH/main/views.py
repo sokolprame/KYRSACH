@@ -1,12 +1,11 @@
+# main/views.py
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .forms import LoginForm
+from django.contrib.auth import authenticate, login, logout
+from .forms import LoginForm  # Ensure this import is correct
+from django.contrib.auth.forms import UserCreationForm
 
-
-
-def home(request):
-    return render(request, 'main/home.html')
+def index(request):
+    return render(request, 'main/index.html')
 
 def register(request):
     if request.method == 'POST':
@@ -20,11 +19,11 @@ def register(request):
 
 def login_view(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST or None)
+        form = LoginForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
+            user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
                 return redirect('index')

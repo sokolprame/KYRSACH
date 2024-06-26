@@ -93,7 +93,7 @@
     <Content Include="main\templates\main\index.html" />
     <Content Include="main\templates\main\login.html" />
     <Content Include="main\templates\main\logout.html" />
-    <Content Include="main\templates\register\register.html" />
+    <Content Include="main\templates\main\register.html" />
     <Content Include="main\templates\main\styles.css" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
