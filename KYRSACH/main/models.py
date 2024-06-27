@@ -3,6 +3,7 @@ from pyexpat import model
 from turtle import color
 from unittest.util import _MAX_LENGTH
 from django.db import models
+from goods.models import models
 
 class Product(models.Model):
     name = models.CharField(max_length=100)

@@ -31,6 +31,9 @@ def login_view(request):
         form = LoginForm()
     return render(request, 'main/login.html', {'form': form})
 
+def profile(request):
+    return render(request, 'main/profile.html')
+
 def logout_view(request):
     logout(request)
     return redirect('index')

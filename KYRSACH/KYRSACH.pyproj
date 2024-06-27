@@ -87,12 +87,14 @@
   <ItemGroup>
     <Content Include="goods\templates\main\catalog.html" />
     <Content Include="goods\templates\main\product.html" />
+    <Content Include="goods\templates\main\product_detail.html" />
     <Content Include="goods\templates\main\purchase.html" />
     <Content Include="main\static\js\scripts.js" />
     <Content Include="main\templates\main\base.html" />
     <Content Include="main\templates\main\index.html" />
     <Content Include="main\templates\main\login.html" />
     <Content Include="main\templates\main\logout.html" />
+    <Content Include="main\templates\main\profile.html" />
     <Content Include="main\templates\main\register.html" />
     <Content Include="main\templates\main\styles.css" />
     <Content Include="requirements.txt" />

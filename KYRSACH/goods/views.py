@@ -3,13 +3,20 @@ from django.contrib.auth.decorators import login_required
 from .models import Product
 from main.forms import PurchaseForm
 
+
+
+def catalog(request):
+    products = Product.objects.all()
+    return render(request, 'goods/catalog.html', {'products': products})
+
+
 def product_list(request):
     products = Product.objects.all()
-    return render(request, 'goods/templates/main/catalog.html', {'products': products})
+    return render(request, 'main/catalog.html', {'products': products})
 
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    return render(request, 'goods/templates/main/purchase.html', {'product': product})
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'goods/product_detail.html', {'product': product})
 
 @login_required
 def purchase(request, pk):
