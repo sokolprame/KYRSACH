@@ -1,20 +1,20 @@
-# main/views.py
 from django.shortcuts import render, redirect
+from django.urls import reverse
+from .forms import RegisterForm, LoginForm
 from django.contrib.auth import authenticate, login, logout
-from .forms import LoginForm  # Ensure this import is correct
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, 'main/index.html')
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect(reverse('goods:product_list'))
     else:
-        form = UserCreationForm()
+        form = RegisterForm()
     return render(request, 'main/register.html', {'form': form})
 
 def login_view(request):
@@ -26,14 +26,16 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('index')
+                return redirect('profile')
     else:
         form = LoginForm()
     return render(request, 'main/login.html', {'form': form})
 
-def profile(request):
-    return render(request, 'main/profile.html')
-
+@login_required
 def logout_view(request):
     logout(request)
-    return redirect('index')
+    return redirect(reverse('main:index'))
+
+@login_required
+def profile(request):
+    return render(request, 'main/profile.html')

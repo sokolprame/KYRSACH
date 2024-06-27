@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Welcome, {{ user.username }}</h1>
-    <p>Your basket:</p>
-    <!-- Добавьте отображение корзины -->
+<body class="bg-gray-900 text-white">
+    <header class="flex items-center justify-between bg-gray-800 px-6 py-4">
+        <div class="header-logo">PrimeFashion</div>
+        <nav class="flex space-x-4">
+            <a href="{% url 'goods:product_list' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Каталог</a>
+            <a href="{% url 'main:logout' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Выйти</a>
+        </nav>
+    </header>
+
+    <main class="px-6 py-4">
+        <h1 class="text-2xl font-bold mb-4">Добро пожаловать, {{ user.username }}</h1>
+        <p>Это ваша страница профиля.</p>
+        <!-- Add more profile details here -->
+    </main>
 </body>
 </html>

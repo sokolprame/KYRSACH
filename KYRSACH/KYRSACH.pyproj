@@ -39,6 +39,7 @@
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="goods\admin.py" />
     <Compile Include="goods\apps.py" />
+    <Compile Include="goods\forms.py" />
     <Compile Include="goods\migrations\__init__.py" />
     <Compile Include="goods\models.py" />
     <Compile Include="goods\tests.py" />

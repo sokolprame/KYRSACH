@@ -1,7 +1,7 @@
-# main/urls.py
-import profile
 from django.urls import path
 from .views import index, register, login_view, logout_view, profile
+
+app_name = 'main'
 
 urlpatterns = [
     path('', index, name='index'),

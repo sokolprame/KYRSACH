@@ -1,4 +1,12 @@
 from django import forms
+from .models import Product, Purchase
 
-class PurchaseForm(forms.Form):
-    quantity = forms.IntegerField(label='Количество', min_value=1)
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'description', 'price', 'image']
+
+class PurchaseForm(forms.ModelForm):
+    class Meta:
+        model = Purchase
+        fields = ['product', 'quantity', 'card_number', 'expiration_date', 'cvv', 'address']

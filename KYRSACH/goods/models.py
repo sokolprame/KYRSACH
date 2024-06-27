@@ -11,10 +11,15 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-class Order(models.Model):
+class Purchase(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    address = models.CharField(max_length=255)
-    card_number = models.CharField(max_length=20)
+    quantity = models.PositiveIntegerField()
+    purchased_at = models.DateTimeField(auto_now_add=True)
+    card_number = models.CharField(max_length=16)
     expiration_date = models.CharField(max_length=5)
-    cvv = models.CharField(max_length=4)
+    cvv = models.CharField(max_length=3)
+    address = models.TextField()
+
+    def __str__(self):
+        return f'{self.user.username} bought {self.quantity} of {self.product.name}'
