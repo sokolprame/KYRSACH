@@ -1,31 +1,27 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-900 text-white">
-    <div class="flex items-center justify-center h-screen">
-        <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-            <h2 class="text-2xl font-bold mb-4 text-center">Регистрация</h2>
-            <form action="/register" method="POST">
-                <div class="mb-4">
-                    <label for="username" class="block text-gray-400 mb-2">Имя пользователя</label>
-                    <input type="text" id="username" name="username" class="w-full p-2 rounded bg-gray-700 text-white" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-400 mb-2">Электронная почта</label>
-                    <input type="email" id="email" name="email" class="w-full p-2 rounded bg-gray-700 text-white" required>
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="block text-gray-400 mb-2">Пароль</label>
-                    <input type="password" id="password" name="password" class="w-full p-2 rounded bg-gray-700 text-white" required>
-                </div>
-                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 w-full">Зарегистрироваться</button>
-            </form>
-        </div>
+{% extends "main/base.html" %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center h-screen">
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-4 text-center">Регистрация</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="username" class="block text-gray-400 mb-2">Имя пользователя</label>
+                <input type="text" id="username" name="username" class="w-full p-2 rounded bg-gray-700 text-white" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-400 mb-2">Электронная почта</label>
+                <input type="email" id="email" name="email" class="w-full p-2 rounded bg-gray-700 text-white" required>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-400 mb-2">Пароль</label>
+                <input type="password" id="password" name="password" class="w-full p-2 rounded bg-gray-700 text-white" required>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 w-full">Зарегистрироваться</button>
+        </form>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

@@ -1,165 +1,60 @@
-﻿<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrimeFashion</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .header-logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            font-weight: bold;
-        }
+﻿{% extends "main/base.html" %}
 
-        .search-bar {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
-        }
-
-            .search-bar.open {
-                max-height: 100px;
-            }
-    </style>
-</head>
-<body class="bg-gray-900 text-white">
-    <header class="flex items-center justify-between bg-gray-800 px-6 py-4">
-        <div class="header-logo">PrimeFashion</div>
-        <nav class="flex space-x-4">
-            <a href="{% url 'goods:product_list' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Каталог</a>
-            {% if user.is_authenticated %}
-            <a href="{% url 'main:logout' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Выйти</a>
-            {% else %}
-            <a href="{% url 'main:login' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Войти</a>
-            <a href="{% url 'main:register' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Регистрация</a>
-            {% endif %}
-        </nav>
-    </header>
-    <div id="searchBar" class="search-bar bg-gray-700 px-6 py-0.5">
-        <input type="text" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Поиск...">
+{% block content %}
+<section class="my-8 px-6">
+    <h2 class="mb-4 text-center text-2xl font-bold">КАТЕГОРИИ</h2>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div class="bg-gray-700 p-4 text-center">
+            <h3 class="text-lg font-semibold">ЗИП-ХУДИ</h3>
+        </div>
+        <div class="bg-gray-700 p-4 text-center">
+            <h3 class="text-lg font-semibold">КОСТЮМЫ</h3>
+        </div>
+        <div class="bg-gray-700 p-4 text-center">
+            <h3 class="text-lg font-semibold">АКСЕССУАРЫ</h3>
+        </div>
+        <div class="bg-gray-700 p-4 text-center">
+            <h3 class="text-lg font-semibold">ШТАНЫ</h3>
+        </div>
+        <div class="bg-gray-700 p-4 text-center">
+            <h3 class="text-lg font-semibold">ОБУВЬ</h3>
+        </div>
+        <div class="bg-gray-700 p-4 text-center">
+            <h3 class="text-lg font-semibold">ФУТБОЛКИ</h3>
+        </div>
     </div>
-    <section class="my-8 px-6">
-        <h2 class="mb-4 text-center text-2xl font-bold">КАТЕГОРИИ</h2>
-        <div class="grid-cols-1 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-            <div class="bg-gray-700 p-4 text-center">
-                <h3 class="text-lg font-semibold">ЗИП-ХУДИ</h3>
-            </div>
-            <div class="bg-gray-700 p-4 text-center">
-                <h3 class="text-lg font-semibold">КОСТЮМЫ</h3>
-            </div>
-            <div class="bg-gray-700 p-4 text-center">
-                <h3 class="text-lg font-semibold">АКСЕССУАРЫ</h3>
-            </div>
-            <div class="bg-gray-700 p-4 text-center">
-                <h3 class="text-lg font-semibold">ШТАНЫ</h3>
-            </div>
-            <div class="bg-gray-700 p-4 text-center">
-                <h3 class="text-lg font-semibold">ОБУВЬ</h3>
-            </div>
-            <div class="bg-gray-700 p-4 text-center">
-                <h3 class="text-lg font-semibold">ФУТБОЛКИ</h3>
-            </div>
+</section>
+<section class="my-8 px-6">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <img src="image1.jpg" alt="Fashion Image 1" class="h-full w-full object-cover">
+        <img src="image2.jpg" alt="Fashion Image 2" class="h-full w-full object-cover">
+    </div>
+</section>
+<section class="my-8 px-6">
+    <h2 class="mb-4 text-center text-2xl">НОВИНКИ</h2>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+        <div class="rounded-lg bg-white p-4 text-black">
+            <img src="assets/images/new1.jpg" alt="New Arrival 1" class="mb-2 h-48 w-full object-cover">
+            <h3 class="text-lg font-semibold">Product 1</h3>
+            <p class="text-gray-700">Описание продукта 1</p>
+            <a href="product.html" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 block text-center">Подробнее</a>
         </div>
-    </section>
-    <section class="my-8 px-6">
-        <div class="grid-cols-1 grid gap-4 md:grid-cols-2">
-            <img src="image1.jpg" alt="Fashion Image 1" class="h-full w-full object-cover">
-            <img src="image2.jpg" alt="Fashion Image 2" class="h-full w-full object-cover">
+        <div class="rounded-lg bg-white p-4 text-black">
+            <img src="assets/images/new2.jpg" alt="New Arrival 2" class="mb-2 h-48 w-full object-cover">
+            <h3 class="text-lg font-semibold">Product 2</h3>
+            <p class="text-gray-700">Описание продукта 2</p>
+            <a href="product.html" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 block text-center">Подробнее</a>
         </div>
-    </section>
-    <section class="my-8 px-6">
-        <h2 class="mb-4 text-center text-2xl">НОВИНКИ</h2>
-        <div class="grid-cols-1 grid gap-4 md:grid-cols-4">
-            <div class="rounded-lg bg-white p-4 text-black">
-                <img src="assets/images/new1.jpg" alt="New Arrival 1" class="mb-2 h-48 w-full object-cover">
-                <h3 class="text-lg font-semibold">Product 1</h3>
-                <p class="text-gray-700">Описание продукта 1</p>
-                <a href="product.html" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 block text-center">Подробнее</a>
-            </div>
-            <div class="rounded-lg bg-white p-4 text-black">
-                <img src="assets/images/new2.jpg" alt="New Arrival 2" class="mb-2 h-48 w-full object-cover">
-                <h3 class="text-lg font-semibold">Product 2</h3>
-                <p class="text-gray-700">Описание продукта 2</p>
-                <a href="product.html" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 block text-center">Подробнее</a>
-            </div>
-            <div class="rounded-lg bg-white p-4 text-black">
-                <img src="new3.jpg" alt="New Arrival 3" class="mb-2 h-48 w-full object-cover">
-                <h3 class="text-lg font-semibold">Product 3</h3>
-                <p class="text-gray-700">Описание продукта 3</p>
-            </div>
-            <div class="rounded-lg bg-white p-4 text-black">
-                <img src="new4.jpg" alt="New Arrival 4" class="mb-2 h-48 w-full object-cover">
-                <h3 class="text-lg font-semibold">Product 4</h3>
-                <p class="font- text-gray-700">Описание продукта 4</p>
-            </div>
+        <div class="rounded-lg bg-white p-4 text-black">
+            <img src="new3.jpg" alt="New Arrival 3" class="mb-2 h-48 w-full object-cover">
+            <h3 class="text-lg font-semibold">Product 3</h3>
+            <p class="text-gray-700">Описание продукта 3</p>
         </div>
-    </section>
-    <!-- Collections Section -->
-    <section class="my-8 px-6">
-        <h2 class="mb-4 text-center text-2xl font-bold">КОЛЛЕКЦИИ</h2>
-        <div class="grid-cols-1 grid gap-4 md:grid-cols-4">
-            <div class="rounded-lg bg-white p-4 text-black">
-                <img src="collection1.jpg" alt="Collection 1" class="mb-2 h-48 w-full object-cover">
-                <h3 class="text-lg font-semibold">Collection 1</h3>
-                <p class="text-gray-700">Описание коллекции 1</p>
-                <button class="size-40 rounded-lg bg-gray-800">Добавить в корзину</button>
-            </div>
-            <div class="rounded-lg bg-white p-4 text-black">
-                <img src="collection2.jpg" alt="Collection 2" class="mb-2 h-48 w-full object-cover">
-                <h3 class="text-lg font-semibold">Collection 2</h3>
-                <p class="text-gray-700">Описание коллекции 2</p>
-            </div>
-            <div class="rounded-lg bg-white p-4 text-black">
-                <img src="collection3.jpg" alt="Collection 3" class="mb-2 h-48 w-full object-cover">
-                <h3 class="text-lg font-semibold">Collection 3</h3>
-                <p class="text-gray-700">Описание коллекции 3</p>
-            </div>
-            <div class="rounded-lg bg-white p-4 text-black">
-                <img src="collection4.jpg" alt="Collection 4" class="mb-2 h-48 w-full object-cover">
-                <h3 class="text-lg font-semibold">Collection 4</h3>
-                <п class="text-gray-700">Описание коллекции 4</п>
-            </div>
+        <div class="rounded-lg bg-white p-4 text-black">
+            <img src="new4.jpg" alt="New Arrival 4" class="mb-2 h-48 w-full object-cover">
+            <h3 class="text-lg font-semibold">Product 4</h3>
+            <p class="text-gray-700">Описание продукта 4</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 px-6 py-8 text-center">
-        <div class="mb-4">
-            <a href="#" class="text-2xl font-bold">PrimeFashion</a>
-        </div>
-        <div class="mb-4">
-            <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="mx-2"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="mx-2"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <div class="grid-cols-1 grid gap-4 md:grid-cols-3">
-            <div>
-                <h3 class="text-lg font-semibold">НАВИГАЦИЯ</h3>
-                <ul>
-                    <li><a href="#" class="text-gray-400">Главное</a></li>
-                    <li><a href="#" class="text-gray-400">Каталог</a></li>
-                    <li><a href="#" class="text-gray-400">Контакты</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold">ПОМОЩЬ</h3>
-                <ul>
-                    <li><a href="#" class="text-gray-400">Доставка и оплата</a></li>
-                    <li><a href="#" class="text-gray-400">Возврат и обмен</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold">ДОКУМЕНТАЦИЯ</h3>
-                <ul>
-                    <il><a href="#" class="text-gray-400">Публичная оферта</a></il>
-                    <il><a href="#" class="text-gray-400">Политика конфиденциальности</a></il>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <script src="/static/js/scripts.js"></script>
-</body>
-</html>
+    </div>
+</section>
+{% endblock %}

@@ -5,7 +5,7 @@
     <Name>KYRSACH</Name>
     <RootNamespace>KYRSACH</RootNamespace>
     <TestFramework>Pytest</TestFramework>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env5|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,12 +31,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app\forms.py" />
-    <Compile Include="app\models.py" />
-    <Compile Include="app\tests.py" />
-    <Compile Include="app\views.py" />
-    <Compile Include="app\__init__.py" />
-    <Compile Include="app\migrations\__init__.py" />
     <Compile Include="goods\admin.py" />
     <Compile Include="goods\apps.py" />
     <Compile Include="goods\forms.py" />
@@ -62,19 +56,10 @@
     <Compile Include="KYRSACH\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\" />
-    <Folder Include="app\migrations\" />
-    <Folder Include="app\static\" />
-    <Folder Include="app\static\app\" />
-    <Folder Include="app\static\app\content\" />
-    <Folder Include="app\static\app\fonts\" />
-    <Folder Include="app\static\app\scripts\" />
-    <Folder Include="app\templates\" />
-    <Folder Include="app\templates\app\" />
     <Folder Include="goods\" />
     <Folder Include="goods\migrations\" />
     <Folder Include="goods\templates\" />
-    <Folder Include="goods\templates\main\" />
+    <Folder Include="goods\templates\goods\" />
     <Folder Include="KYRSACH\" />
     <Folder Include="main\" />
     <Folder Include="main\migrations\" />
@@ -83,13 +68,8 @@
     <Folder Include="main\static\image\" />
     <Folder Include="main\templates\" />
     <Folder Include="main\templates\main\" />
-    <Folder Include="main\templates\register\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="goods\templates\main\catalog.html" />
-    <Content Include="goods\templates\main\product.html" />
-    <Content Include="goods\templates\main\product_detail.html" />
-    <Content Include="goods\templates\main\purchase.html" />
     <Content Include="main\static\js\scripts.js" />
     <Content Include="main\templates\main\base.html" />
     <Content Include="main\templates\main\index.html" />
@@ -100,34 +80,6 @@
     <Content Include="main\templates\main\styles.css" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
-    <Content Include="app\static\app\content\bootstrap.css" />
-    <Content Include="app\static\app\content\bootstrap.min.css" />
-    <Content Include="app\static\app\content\site.css" />
-    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="app\static\app\scripts\bootstrap.js" />
-    <Content Include="app\static\app\scripts\bootstrap.min.js" />
-    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
-    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
-    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
-    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="app\static\app\scripts\jquery.validate.js" />
-    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
-    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
-    <Content Include="app\static\app\scripts\respond.js" />
-    <Content Include="app\static\app\scripts\respond.min.js" />
-    <Content Include="app\static\app\scripts\_references.js" />
-    <Content Include="app\templates\app\about.html" />
-    <Content Include="app\templates\app\contact.html" />
-    <Content Include="app\templates\app\index.html" />
-    <Content Include="app\templates\app\layout.html" />
-    <Content Include="app\templates\app\login.html" />
-    <Content Include="app\templates\app\loginpartial.html" />
     <Content Include="tailwind.config.js" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +101,15 @@
       <Id>env3</Id>
       <Version>0.0</Version>
       <Description>env3 (Python 3.12 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+    <Interpreter Include="env5\">
+      <Id>env5</Id>
+      <Version>0.0</Version>
+      <Description>env5 (Python 3.12 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>

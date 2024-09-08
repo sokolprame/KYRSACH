@@ -24,3 +24,27 @@ class SimpleTest(TestCase):
         Tests that 1 + 1 always equals 2.
         """
         self.assertEqual(1 + 1, 2)
+
+        from django.test import TestCase
+from django.contrib.auth.models import User
+from .forms import RegisterForm, LoginForm
+
+class RegisterFormTest(TestCase):
+    def test_register_form_valid(self):
+        form_data = {
+            'username': 'testuser',
+            'email': 'test@example.com',
+            'password1': 'testpassword',
+            'password2': 'testpassword'
+        }
+        form = RegisterForm(data=form_data)
+        self.assertTrue(form.is_valid())
+
+class LoginFormTest(TestCase):
+    def test_login_form_valid(self):
+        form_data = {
+            'username': 'testuser',
+            'password': 'testpassword'
+        }
+        form = LoginForm(data=form_data)
+        self.assertTrue(form.is_valid())

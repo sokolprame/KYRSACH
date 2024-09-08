@@ -1,10 +1,7 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import AuthenticationForm
 from goods.models import Purchase
-
-from django import forms
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
@@ -16,20 +13,20 @@ class LoginForm(AuthenticationForm):
         'placeholder': 'Password'
     }))
 
-class UserRegisterForm(UserCreationForm):
-    email = forms.EmailField()
-
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
-        
-
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Email'
+    }))
 
     class Meta:
         model = User
         fields = ("username", "email", "password1", "password2")
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),
+            'password1': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),
+            'password2': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm Password'}),
+        }
 
     def save(self, commit=True):
         user = super(RegisterForm, self).save(commit=False)
@@ -47,5 +44,4 @@ class PurchaseForm(forms.ModelForm):
             'card_number': forms.TextInput(attrs={'class': 'form-control'}),
             'expiration_date': forms.TextInput(attrs={'class': 'form-control'}),
             'cvv': forms.TextInput(attrs={'class': 'form-control'}),
-}
-        
+        }
