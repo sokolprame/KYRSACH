@@ -2,26 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}PrimeFashion{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFashion</title>
+    <link href="{% static 'css/tailwind.css' %}" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white">
-    <header class="flex items-center justify-between bg-gray-800 px-6 py-4">
-        <div class="header-logo">PrimeFashion</div>
-        <nav class="flex space-x-4">
-            <a href="{% url 'main:index' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Home</a>
-            <a href="{% url 'goods:catalog' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Catalog</a>
-            {% if user.is_authenticated %}
-            <a href="{% url 'main:profile' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Profile</a>
-            <a href="{% url 'main:logout' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Logout</a>
-            {% else %}
-            <a href="{% url 'main:login' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Login</a>
-            <a href="{% url 'main:register' %}" class="bg-gray-700 text-white py-2 px-4 rounded">Register</a>
-            {% endif %}
+    <header class="bg-gray-800 p-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold">PrimeFashion</a>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="{% url 'home' %}" class="hover:text-gray-300">Главная</a></li>
+                <li><a href="{% url 'catalog' %}" class="hover:text-gray-300">Каталог</a></li>
+                <li><a href="#" class="hover:text-gray-300">Контакты</a></li>
+                <li><a href="#" class="hover:text-gray-300">Вход</a></li>
+            </ul>
         </nav>
     </header>
-    <main class="px-6 py-4">
-        {% block content %}{% endblock %}
-    </main>
-</body>
+
+    <body class="bg-gray-100">
+        <nav class="bg-blue-600 text-white p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="{% url 'main:index' %}" class="text-xl font-bold">PrimeFashion</a>
+                <div>
+                    <a href="{% url 'goods:catalog' %}" class="mr-4">Каталог</a>
+                    <a href="{% url 'goods:cart' %}" class="mr-4">Корзина</a>
+                    <a href="{% url 'goods:wishlist' %}" class="mr-4">Список желаний</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'goods:account' %}" class="mr-4">Профиль</a>
+                    <a href="{% url 'main:logout' %}">Выйти</a>
+                    {% else %}
+                    <a href="{% url 'main:login' %}" class="mr-4">Войти</a>
+                    <a href="{% url 'main:register' %}">Регистрация</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+        <div class="container mx-auto p-4">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer class="bg-gray-800 p-4 mt-10 text-center">
+            <div class="container mx-auto">
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold">PrimeFashion</h3>
+                        <p>© 2023 PrimeFashion. Все права защищены.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">Свяжитесь с нами</h3>
+                        <p>Email: info@primefashion.com</p>
+                        <p>Телефон: +7 (123) 456-78-90</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">Подписка на рассылку</h3>
+                        <form action="#" method="post">
+                            <input type="email" name="email" placeholder="Ваш email" class="p-2 bg-gray-700 text-white">
+                            <button type="submit" class="bg-blue-600 text-white p-2">Подписаться</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>

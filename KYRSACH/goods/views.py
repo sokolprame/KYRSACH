@@ -1,21 +1,21 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Product, ProductVariant, Cart, Order, Wishlist, Review
-from .forms import ProductForm, PurchaseForm
+from .models import Product, ProductVariant, Cart, Order, Wishlist
+from .forms import ProductForm, ProductVariantForm
 
 def catalog(request):
     products = Product.objects.all()
     return render(request, 'goods/catalog.html', {'products': products})
 
-def product_list(request):
-    products = Product.objects.all()
-    return render(request, 'main/catalog.html', {'products': products})
-
 def product_detail(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     variants = ProductVariant.objects.filter(product=product)
-    reviews = Review.objects.filter(product=product)
-    return render(request, 'main/product_detail.html', {'product': product, 'variants': variants, 'reviews': reviews})
+    similar_products = Product.objects.filter(category=product.category).exclude(id=product.id)[:4]
+    return render(request, 'goods/product_detail.html', {
+        'product': product,
+        'variants': variants,
+        'similar_products': similar_products
+    })
 
 @login_required
 def add_to_cart(request, variant_id):
@@ -59,11 +59,6 @@ def wishlist(request):
     return render(request, 'goods/wishlist.html', {'wishlist_items': wishlist_items})
 
 @login_required
-def add_review(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    if request.method == 'POST':
-        rating = request.POST.get('rating')
-        comment = request.POST.get('comment')
-        Review.objects.create(user=request.user, product=product, rating=rating, comment=comment)
-        return redirect('goods:product_detail', product_id=product.id)
-    return render(request, 'goods/add_review.html', {'product': product})
+def account(request):
+    orders = Order.objects.filter(user=request.user)
+    return render(request, 'goods/account.html', {'orders': orders})

@@ -5,7 +5,7 @@
     <Name>KYRSACH</Name>
     <RootNamespace>KYRSACH</RootNamespace>
     <TestFramework>Pytest</TestFramework>
-    <InterpreterId>MSBuild|env5|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,6 +45,7 @@
     <Compile Include="main\forms.py" />
     <Compile Include="main\migrations\__init__.py" />
     <Compile Include="main\models.py" />
+    <Compile Include="main\signals.py" />
     <Compile Include="main\tests.py" />
     <Compile Include="main\urls.py" />
     <Compile Include="main\views.py" />
@@ -70,6 +71,12 @@
     <Folder Include="main\templates\main\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="goods\templates\goods\cart.html" />
+    <Content Include="goods\templates\goods\catalog.html" />
+    <Content Include="goods\templates\goods\checkout.html" />
+    <Content Include="goods\templates\goods\order_success.html" />
+    <Content Include="goods\templates\goods\product_detail.html" />
+    <Content Include="goods\templates\goods\wishlist.html" />
     <Content Include="main\static\js\scripts.js" />
     <Content Include="main\templates\main\base.html" />
     <Content Include="main\templates\main\index.html" />

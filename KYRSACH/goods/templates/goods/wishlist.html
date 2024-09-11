@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="p-4">
+    <h1 class="text-2xl font-bold">Список желаний</h1>
+    <ul>
+        {% for item in wishlist_items %}
+        <li>{{ item.product.name }} - {{ item.product.price }} руб.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -99,6 +99,20 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
+
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 
@@ -115,3 +129,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
 LOGIN_REDIRECT_URL = '/profile/'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

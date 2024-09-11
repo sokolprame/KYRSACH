@@ -1,17 +1,12 @@
 from django import forms
-from .models import Product, Purchase, Review
+from .models import Product, ProductVariant
 
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'description', 'price', 'image']
+        fields = ['name', 'description', 'price', 'image', 'category', 'brand', 'is_new', 'is_popular', 'is_discounted']
 
-class PurchaseForm(forms.ModelForm):
+class ProductVariantForm(forms.ModelForm):
     class Meta:
-        model = Purchase
-        fields = ['product', 'quantity', 'card_number', 'expiration_date', 'cvv', 'address']
-
-class ReviewForm(forms.ModelForm):
-    class Meta:
-        model = Review
-        fields = ['rating', 'comment']
+        model = ProductVariant
+        fields = ['product', 'size', 'color', 'stock']
