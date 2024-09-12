@@ -1,8 +1,76 @@
-{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFashion - Оформление заказа</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+        }
 
-{% block content %}
-<div class="p-4">
-    <h1 class="text-2xl font-bold">����� ������� ��������!</h1>
-    <p>������� �� �������!</p>
-</div>
-{% endblock %}
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4 flex items-center justify-between">
+        <div class="text-2xl font-bold">PrimeFashion</div>
+        <nav class="flex items-center space-x-4">
+            <a href="#" class="hover:text-gray-400">Главная</a>
+            <a href="#" class="hover:text-gray-400">Каталог</a>
+            <a href="#" class="hover:text-gray-400">Контакты</a>
+            <a href="#" class="hover:text-gray-400">Профиль</a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="content p-8">
+        <h2 class="text-center text-3xl font-bold mb-4">Оформление заказа</h2>
+        <div class="max-w-3xl mx-auto bg-gray-800 p-6 rounded">
+            <form action="#" method="POST" class="space-y-6">
+                <!-- Доставка -->
+                <div class="bg-gray-700 p-4 rounded">
+                    <h3 class="text-2xl font-semibold mb-4">Информация о доставке</h3>
+                    <input type="text" placeholder="Имя" class="w-full p-2 mb-4 bg-gray-600 rounded focus:outline-none focus:bg-gray-500">
+                    <input type="text" placeholder="Адрес" class="w-full p-2 mb-4 bg-gray-600 rounded focus:outline-none focus:bg-gray-500">
+                    <input type="text" placeholder="Город" class="w-full p-2 mb-4 bg-gray-600 rounded focus:outline-none focus:bg-gray-500">
+                    <input type="text" placeholder="Индекс" class="w-full p-2 mb-4 bg-gray-600 rounded focus:outline-none focus:bg-gray-500">
+                </div>
+
+                <!-- Оплата -->
+                <div class="bg-gray-700 p-4 rounded">
+                    <h3 class="text-2xl font-semibold mb-4">Способ оплаты</h3>
+                    <select class="w-full p-2 mb-4 bg-gray-600 rounded focus:outline-none focus:bg-gray-500">
+                        <option>Кредитная карта</option>
+                        <option>Платежная система</option>
+                        <option>Наложенный платеж</option>
+                    </select>
+                    <input type="text" placeholder="Номер карты" class="w-full p-2 mb-4 bg-gray-600 rounded focus:outline-none focus:bg-gray-500">
+                    <input type="text" placeholder="Срок действия" class="w-full p-2 mb-4 bg-gray-600 rounded focus:outline-none focus:bg-gray-500">
+                    <input type="text" placeholder="CVV" class="w-full p-2 mb-4 bg-gray-600 rounded focus:outline-none focus:bg-gray-500">
+                </div>
+
+                <!-- Подтверждение заказа -->
+                <div class="text-center">
+                    <button type="submit" class="p-2 bg-blue-500 text-white rounded hover:bg-blue-600">Подтвердить заказ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <div class="text-center">© 2024 PrimeFashion. Все права защищены.</div>
+    </footer>
+</body>
+</html>

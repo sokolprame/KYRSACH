@@ -8,6 +8,21 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='custom_user_set',
+        blank=True,
+        help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
+        verbose_name='groups',
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='custom_user_set',
+        blank=True,
+        help_text='Specific permissions for this user.',
+        verbose_name='user permissions',
+    )
+
     def __str__(self):
         return self.email
 
@@ -33,8 +48,8 @@ class Address(models.Model):
         return f'{self.address_line1}, {self.city}'
 
 class Wishlist(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='wishlist')
-    product = models.ForeignKey('goods.Product', on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='main_wishlist')
+    product = models.ForeignKey('goods.Product', on_delete=models.CASCADE, related_name='main_wishlist_set')
 
     def __str__(self):
         return f'{self.product.name} in wishlist of {self.user.username}'

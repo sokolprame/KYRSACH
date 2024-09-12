@@ -4,13 +4,7 @@ from .forms import RegisterForm, LoginForm
 from goods.models import Product
 
 def index(request):
-    new_products = Product.objects.filter(is_new=True)[:4]
-    popular_products = Product.objects.filter(is_popular=True)[:4]
-    discounted_products = Product.objects.filter(is_discounted=True)[:4]
     return render(request, 'main/index.html', {
-        'new_products': new_products,
-        'popular_products': popular_products,
-        'discounted_products': discounted_products
     })
 
 def register(request):
@@ -42,4 +36,4 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('main:index')z
+    return redirect('main:index')

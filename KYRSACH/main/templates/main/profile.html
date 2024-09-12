@@ -1,7 +1,52 @@
-{% extends "main/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFashion - Профиль</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4 flex items-center justify-between">
+        <div class="text-2xl font-bold">PrimeFashion</div>
+        <nav class="flex items-center space-x-4">
+            <a href="#" class="hover:text-gray-400">Главная</a>
+            <a href="#" class="hover:text-gray-400">Каталог</a>
+            <a href="#" class="hover:text-gray-400">Контакты</a>
+            <a href="#" class="hover:text-gray-400">Профиль</a>
+        </nav>
+    </header>
 
-{% block content %}
-<h1 class="text-2xl font-bold mb-4">Профиль пользователя, {{ user.username }}</h1>
-<p>Здесь будет информация о вашем профиле.</p>
-<!-- Add more profile details here -->
-{% endblock %}
+    <!-- Профиль -->
+    <section class="p-8">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start">
+            <!-- Фото профиля -->
+            <img src="https://steamuserimages-a.akamaihd.net/ugc/2530541916818015530/046E4C5FA460BBCC996EFDBDBDE9CA070374F60A/?imw=512&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="Профиль пользователя" class="w-32 h-32 rounded-full mb-4 md:mb-0 md:mr-6">
+            <div>
+                <h2 class="text-2xl font-bold mb-2">Молостов Михаил</h2>
+                <p class="text-gray-300 mb-2">xokolprame@mail.ru</p>
+                <p class="text-gray-300">Адрес доставки: ул. Советская, д 193, кв. 65, Касимов, Россия</p>
+            </div>
+        </div>
+
+        <!-- Корзина товаров -->
+        <h2 class="text-3xl font-bold mt-8 mb-4">Корзина</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Пример товара в корзине -->
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://i.ebayimg.com/00/s/ODAwWDUxMg==/z/hywAAOSwxflZwEwe/$_57.JPG?set_id=8800005007" alt="Товар в корзине" class="w-full h-48 object-cover rounded mb-4">
+                <h3 class="text-lg font-bold mb-2">Мужская куртка</h3>
+                <p class="text-sm text-gray-300">4 000 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Удалить из корзины</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <div class="text-center">© 2024 PrimeFashion. Все права защищены.</div>
+    </footer>
+</body>
+</html>

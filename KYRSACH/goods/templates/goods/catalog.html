@@ -1,16 +1,77 @@
-{% extends 'main/base.html' %}
-{% block content %}
-<div class="container mx-auto py-10">
-    <h1 class="text-3xl font-bold">������� �������</h1>
-    <div class="grid grid-cols-3 gap-6 mt-6">
-        {% for product in products %}
-        <div class="bg-white p-5 rounded shadow">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="mb-4">
-            <h2 class="text-xl">{{ product.name }}</h2>
-            <p>{{ product.price }} ���.</p>
-            <a href="{% url 'product_detail' product.pk %}" class="text-blue-500">���������</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFashion - Каталог</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4 flex items-center justify-between">
+        <div class="text-2xl font-bold">PrimeFashion</div>
+        <nav class="flex items-center space-x-4">
+            <a href="#" class="hover:text-gray-400">Главная</a>
+            <a href="#" class="hover:text-gray-400">Каталог</a>
+            <a href="#" class="hover:text-gray-400">Контакты</a>
+            <a href="#" class="hover:text-gray-400">Профиль</a>
+        </nav>
+    </header>
+
+    <!-- Каталог товаров -->
+    <section class="p-8">
+        <h1 class="text-3xl font-bold mb-8 text-center">Каталог товаров</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Карточка товара -->
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://tessuti-ital.ru/upload/images_for_mail/Novosti/29_01_21/3.jpg" alt="Женская рубашка" class="w-full h-48 object-cover rounded mb-4">
+                <h2 class="text-xl font-bold mb-2">Женская рубашка</h2>
+                <p class="text-sm text-gray-300">Модная женская рубашка с ярким дизайном, подходящая для повседневной носки.</p>
+                <p class="text-lg font-bold mt-2">2 200 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://cdn1.ozone.ru/s3/multimedia-8/6621142976.jpg" alt="Кроссовки Nike" class="w-full h-48 object-cover rounded mb-4">
+                <h2 class="text-xl font-bold mb-2">Кроссовки Nike</h2>
+                <p class="text-sm text-gray-300">Удобные и стильные кроссовки Nike для активного отдыха и повседневной носки.</p>
+                <p class="text-lg font-bold mt-2">5 000 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://avatars.mds.yandex.net/get-mpic/11588019/2a0000018bb0f9f68a5bcd586f3a0cac5bb8/600x800" alt="Сумка кожаная" class="w-full h-48 object-cover rounded mb-4">
+                <h2 class="text-xl font-bold mb-2">Сумка кожаная</h2>
+                <p class="text-sm text-gray-300">Элегантная кожаная сумка, подходящая как для деловых встреч, так и для повседневных нужд.</p>
+                <p class="text-lg font-bold mt-2">7 500 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://ir.ozone.ru/s3/multimedia-c/c1000/6673366092.jpg" alt="Очки солнцезащитные" class="w-full h-48 object-cover rounded mb-4">
+                <h2 class="text-xl font-bold mb-2">Очки солнцезащитные</h2>
+                <p class="text-sm text-gray-300">Стильные солнцезащитные очки с UV-защитой для повседневной носки.</p>
+                <p class="text-lg font-bold mt-2">1 800 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://i.pinimg.com/736x/2c/71/a7/2c71a7a9b13b76184ae3efa370ca1f93.jpg" alt="Мужская футболка" class="w-full h-48 object-cover rounded mb-4">
+                <h2 class="text-xl font-bold mb-2">Мужская футболка</h2>
+                <p class="text-sm text-gray-300">Удобная мужская футболка с принтом, выполненная из качественного материала.</p>
+                <p class="text-lg font-bold mt-2">1 500 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://avatars.mds.yandex.net/i?id=c1c02eacea70d02995ca7ec8910fe18c_l-4715391-images-thumbs&n=13" alt="Кроссовки Adidas" class="w-full h-48 object-cover rounded mb-4">
+                <h2 class="text-xl font-bold mb-2">Кроссовки Adidas</h2>
+                <p class="text-sm text-gray-300">Универсальные кроссовки Adidas для тренировок и активного отдыха.</p>
+                <p class="text-lg font-bold mt-2">4 200 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
         </div>
-        {% endfor %}
-    </div>
-</div>
-{% endblock %}
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <div class="text-center">© 2024 PrimeFashion. Все права защищены.</div>
+    </footer>
+</body>
+</html>

@@ -1,27 +1,55 @@
-{% extends "main/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFashion - Регистрация</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+        }
 
-{% block title %}Регистрация{% endblock %}
+        body {
+            display: flex;
+            flex-direction: column;
+        }
 
-{% block content %}
-<div class="flex items-center justify-center h-screen">
-    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 class="text-2xl font-bold mb-4 text-center">Регистрация</h2>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="mb-4">
-                <label for="username" class="block text-gray-400 mb-2">Имя пользователя</label>
-                <input type="text" id="username" name="username" class="w-full p-2 rounded bg-gray-700 text-white" required>
-            </div>
-            <div class="mb-4">
-                <label for="email" class="block text-gray-400 mb-2">Электронная почта</label>
-                <input type="email" id="email" name="email" class="w-full p-2 rounded bg-gray-700 text-white" required>
-            </div>
-            <div class="mb-4">
-                <label for="password" class="block text-gray-400 mb-2">Пароль</label>
-                <input type="password" id="password" name="password" class="w-full p-2 rounded bg-gray-700 text-white" required>
-            </div>
-            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 w-full">Зарегистрироваться</button>
-        </form>
+        .content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4 flex items-center justify-between">
+        <div class="text-2xl font-bold">PrimeFashion</div>
+        <nav class="flex items-center space-x-4">
+            <a href="#" class="hover:text-gray-400">Главная</a>
+            <a href="#" class="hover:text-gray-400">Каталог</a>
+            <a href="#" class="hover:text-gray-400">Контакты</a>
+            <a href="#" class="hover:text-gray-400">Профиль</a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="content p-8">
+        <h2 class="text-center text-3xl font-bold mb-4">Регистрация</h2>
+        <div class="max-w-md mx-auto bg-gray-800 p-4 rounded">
+            <form action="#" method="POST" class="space-y-4">
+                <input type="text" placeholder="Имя" class="w-full p-2 bg-gray-700 rounded focus:outline-none focus:bg-gray-600">
+                <input type="email" placeholder="Email" class="w-full p-2 bg-gray-700 rounded focus:outline-none focus:bg-gray-600">
+                <input type="password" placeholder="Пароль" class="w-full p-2 bg-gray-700 rounded focus:outline-none focus:bg-gray-600">
+                <input type="password" placeholder="Подтвердите пароль" class="w-full p-2 bg-gray-700 rounded focus:outline-none focus:bg-gray-600">
+                <button type="submit" class="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">Зарегистрироваться</button>
+            </form>
+        </div>
     </div>
-</div>
-{% endblock %}
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <div class="text-center">© 2024 PrimeFashion. Все права защищены.</div>
+    </footer>
+</body>
+</html>

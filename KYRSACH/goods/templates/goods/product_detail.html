@@ -1,31 +1,69 @@
-{% extends 'main/base.html' %}
-{% block content %}
-<div class="container mx-auto py-10">
-    <div class="bg-white p-5 rounded shadow">
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="mb-4">
-        <h1 class="text-3xl">{{ product.name }}</h1>
-        <p class="mt-2">{{ product.description }}</p>
-        <p class="mt-4 text-2xl">{{ product.price }} ���.</p>
-        <form action="{% url 'cart' %}" method="post">
-            {% csrf_token %}
-            <div class="mt-4">
-                <label for="size" class="block">������:</label>
-                <select name="size" id="size" class="border p-2">
-                    {% for size in product.sizes.all %}
-                    <option value="{{ size.id }}">{{ size.size }}</option>
-                    {% endfor %}
-                </select>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFashion - Товар</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4 flex items-center justify-between">
+        <div class="text-2xl font-bold">PrimeFashion</div>
+        <nav class="flex items-center space-x-4">
+            <a href="#" class="hover:text-gray-400">Главная</a>
+            <a href="#" class="hover:text-gray-400">Каталог</a>
+            <a href="#" class="hover:text-gray-400">Контакты</a>
+            <a href="#" class="hover:text-gray-400">Профиль</a>
+        </nav>
+    </header>
+
+    <!-- Страница товара -->
+    <section class="p-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Изображение товара -->
+            <div class="bg-gray-700 rounded shadow">
+                <img src="https://images.unsplash.com/photo-1602810315361-6fe4b8cb50a4" alt="Мужская куртка" class="w-full h-full object-cover rounded">
             </div>
-            <div class="mt-4">
-                <label for="color" class="block">����:</label>
-                <select name="color" id="color" class="border p-2">
-                    {% for color in product.colors.all %}
-                    <option value="{{ color.id }}">{{ color.name }}</option>
-                    {% endfor %}
-                </select>
+            <!-- Описание товара -->
+            <div>
+                <h1 class="text-4xl font-bold mb-4">Мужская куртка</h1>
+                <p class="text-xl font-semibold mb-2">4 000 ₽</p>
+                <p class="text-sm text-gray-300 mb-4">Модная мужская куртка с теплой подкладкой, идеально подходит для прохладной погоды. Доступна в различных размерах и цветах.</p>
+
+                <!-- Выбор размера -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-semibold">Размер:</label>
+                    <select class="w-full p-2 bg-gray-800 border border-gray-700 rounded">
+                        <option>XS</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                </div>
+
+                <!-- Выбор цвета -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-semibold">Цвет:</label>
+                    <select class="w-full p-2 bg-gray-800 border border-gray-700 rounded">
+                        <option>Черный</option>
+                        <option>Синий</option>
+                        <option>Коричневый</option>
+                        <option>Зеленый</option>
+                    </select>
+                </div>
+
+                <!-- Кнопка добавления в корзину -->
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
             </div>
-            <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">�������� � �������</button>
-        </form>
-    </div>
-</div>
-{% endblock %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <div class="text-center">© 2024 PrimeFashion. Все права защищены.</div>
+    </footer>
+</body>
+</html>

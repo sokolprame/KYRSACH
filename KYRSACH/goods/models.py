@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from main.models import CustomUser
 
 class Category(models.Model):
@@ -29,6 +30,9 @@ class Product(models.Model):
     sizes = models.ManyToManyField(Size)
     colors = models.ManyToManyField(Color)
     is_new = models.BooleanField(default=False)
+    is_popular = models.BooleanField(default=False)
+    is_discounted = models.BooleanField(default=False)
+    brand = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
@@ -58,12 +62,33 @@ class Order(models.Model):
     def __str__(self):
         return f'Order {self.id} by {self.user.username}'
 
-
 class Purchase(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
     user = models.ForeignKey('main.CustomUser', on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     purchase_date = models.DateTimeField(auto_now_add=True)
+    card_number = models.CharField(max_length=16)
+    expiration_date = models.CharField(max_length=5)
+    cvv = models.CharField(max_length=3)
+    address = models.TextField()
 
     def __str__(self):
         return f'{self.product.name} - {self.user.email}'
+
+class Wishlist(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='goods_wishlist')
+    products = models.ManyToManyField('Product', related_name='goods_wishlist_set')
+
+    def __str__(self):
+        return f'Wishlist of {self.user.username}'
+
+
+class ProductVariant(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    size = models.CharField(max_length=10)
+    color = models.CharField(max_length=50)
+    stock = models.PositiveIntegerField(default=0)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.product.name} - {self.size} - {self.color}"

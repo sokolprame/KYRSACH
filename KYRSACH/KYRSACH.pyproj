@@ -76,6 +76,7 @@
     <Content Include="goods\templates\goods\checkout.html" />
     <Content Include="goods\templates\goods\order_success.html" />
     <Content Include="goods\templates\goods\product_detail.html" />
+    <Content Include="goods\templates\goods\purchase.html" />
     <Content Include="goods\templates\goods\wishlist.html" />
     <Content Include="main\static\js\scripts.js" />
     <Content Include="main\templates\main\base.html" />

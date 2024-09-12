@@ -1,60 +1,82 @@
-﻿{% extends "main/base.html" %}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFashion - Главная</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4 flex items-center justify-between">
+        <div class="text-2xl font-bold">PrimeFashion</div>
+        <nav class="flex items-center space-x-4">
+            <a href="#" class="hover:text-gray-400">Главная</a>
+            <a href="#" class="hover:text-gray-400">Каталог</a>
+            <a href="#" class="hover:text-gray-400">Контакты</a>
+            <a href="#" class="hover:text-gray-400">Профиль</a>
+        </nav>
+    </header>
 
-{% block content %}
-<section class="my-8 px-6">
-    <h2 class="mb-4 text-center text-2xl font-bold">КАТЕГОРИИ</h2>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6">
-        <div class="bg-gray-700 p-4 text-center">
-            <h3 class="text-lg font-semibold">ЗИП-ХУДИ</h3>
+    <!-- Hero Section -->
+    <section class="flex items-center justify-center py-16 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1551963831-b3b1ca40c98e');">
+        <h1 class="text-4xl md:text-6xl font-bold">PrimeFashion</h1>
+    </section>
+
+    <!-- Новинки -->
+    <section class="p-8">
+        <h2 class="text-center text-3xl font-bold mb-4">Новинки</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Карточка товара -->
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://i.ebayimg.com/00/s/ODAwWDUxMg==/z/hywAAOSwxflZwEwe/$_57.JPG?set_id=8800005007" alt="Мужская куртка" class="w-full h-48 object-cover rounded mb-4">
+                <h3 class="text-lg font-bold mb-2">Мужская куртка</h3>
+                <p class="text-sm text-gray-300">Стильная куртка из высококачественных материалов для любого сезона.</p>
+                <p class="text-xl font-bold mt-2">4 000 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://images.unsplash.com/photo-1581579188520-87911a1b71f4" alt="Женский свитер" class="w-full h-48 object-cover rounded mb-4">
+                <h3 class="text-lg font-bold mb-2">Женский свитер</h3>
+                <p class="text-sm text-gray-300">Уютный свитер для холодных дней с приятным к телу составом.</p>
+                <p class="text-xl font-bold mt-2">2 500 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://images.unsplash.com/photo-1618354691210-3cf25e9e415e" alt="Кроссовки" class="w-full h-48 object-cover rounded mb-4">
+                <h3 class="text-lg font-bold mb-2">Кроссовки</h3>
+                <p class="text-sm text-gray-300">Легкие и удобные кроссовки для ежедневных прогулок.</p>
+                <p class="text-xl font-bold mt-2">3 000 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://images.unsplash.com/photo-1559563365-79ed2f9c2a0b" alt="Куртка-бомбер" class="w-full h-48 object-cover rounded mb-4">
+                <h3 class="text-lg font-bold mb-2">Куртка-бомбер</h3>
+                <p class="text-sm text-gray-300">Легкая куртка-бомбер для весенне-осеннего сезона.</p>
+                <p class="text-xl font-bold mt-2">3 800 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://images.unsplash.com/photo-1571048202171-3d33a6c6b67c" alt="Шапка" class="w-full h-48 object-cover rounded mb-4">
+                <h3 class="text-lg font-bold mb-2">Шапка</h3>
+                <p class="text-sm text-gray-300">Теплая шапка, которая отлично подойдет для зимних прогулок.</p>
+                <p class="text-xl font-bold mt-2">1 200 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
+            <div class="bg-gray-700 p-4 rounded shadow">
+                <img src="https://images.unsplash.com/photo-1600096194971-6e1b0b820397" alt="Джинсы" class="w-full h-48 object-cover rounded mb-4">
+                <h3 class="text-lg font-bold mb-2">Джинсы</h3>
+                <p class="text-sm text-gray-300">Классические джинсы с удобной посадкой и стильным дизайном.</p>
+                <p class="text-xl font-bold mt-2">3 500 ₽</p>
+                <button class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Добавить в корзину</button>
+            </div>
         </div>
-        <div class="bg-gray-700 p-4 text-center">
-            <h3 class="text-lg font-semibold">КОСТЮМЫ</h3>
-        </div>
-        <div class="bg-gray-700 p-4 text-center">
-            <h3 class="text-lg font-semibold">АКСЕССУАРЫ</h3>
-        </div>
-        <div class="bg-gray-700 p-4 text-center">
-            <h3 class="text-lg font-semibold">ШТАНЫ</h3>
-        </div>
-        <div class="bg-gray-700 p-4 text-center">
-            <h3 class="text-lg font-semibold">ОБУВЬ</h3>
-        </div>
-        <div class="bg-gray-700 p-4 text-center">
-            <h3 class="text-lg font-semibold">ФУТБОЛКИ</h3>
-        </div>
-    </div>
-</section>
-<section class="my-8 px-6">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <img src="image1.jpg" alt="Fashion Image 1" class="h-full w-full object-cover">
-        <img src="image2.jpg" alt="Fashion Image 2" class="h-full w-full object-cover">
-    </div>
-</section>
-<section class="my-8 px-6">
-    <h2 class="mb-4 text-center text-2xl">НОВИНКИ</h2>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
-        <div class="rounded-lg bg-white p-4 text-black">
-            <img src="assets/images/new1.jpg" alt="New Arrival 1" class="mb-2 h-48 w-full object-cover">
-            <h3 class="text-lg font-semibold">Product 1</h3>
-            <p class="text-gray-700">Описание продукта 1</p>
-            <a href="product.html" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 block text-center">Подробнее</a>
-        </div>
-        <div class="rounded-lg bg-white p-4 text-black">
-            <img src="assets/images/new2.jpg" alt="New Arrival 2" class="mb-2 h-48 w-full object-cover">
-            <h3 class="text-lg font-semibold">Product 2</h3>
-            <p class="text-gray-700">Описание продукта 2</p>
-            <a href="product.html" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400 block text-center">Подробнее</a>
-        </div>
-        <div class="rounded-lg bg-white p-4 text-black">
-            <img src="new3.jpg" alt="New Arrival 3" class="mb-2 h-48 w-full object-cover">
-            <h3 class="text-lg font-semibold">Product 3</h3>
-            <p class="text-gray-700">Описание продукта 3</p>
-        </div>
-        <div class="rounded-lg bg-white p-4 text-black">
-            <img src="new4.jpg" alt="New Arrival 4" class="mb-2 h-48 w-full object-cover">
-            <h3 class="text-lg font-semibold">Product 4</h3>
-            <p class="text-gray-700">Описание продукта 4</p>
-        </div>
-    </div>
-</section>
-{% endblock %}
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <div class="text-center">© 2024 PrimeFashion. Все права защищены.</div>
+    </footer>
+</body>
+</html>

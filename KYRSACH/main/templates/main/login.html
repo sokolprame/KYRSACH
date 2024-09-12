@@ -1,10 +1,45 @@
-{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFashion - Вход</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4 flex items-center justify-between">
+        <div class="text-2xl font-bold">PrimeFashion</div>
+        <nav class="flex items-center space-x-4">
+            <a href="#" class="hover:text-gray-400">Главная</a>
+            <a href="#" class="hover:text-gray-400">Каталог</a>
+            <a href="#" class="hover:text-gray-400">Контакты</a>
+        </nav>
+    </header>
 
-{% block content %}
-<h1 class="text-3xl font-bold">Вход</h1>
-<form method="post" class="mt-4">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Войти</button>
-</form>
-{% endblock %}
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center">
+        <div class="w-full max-w-md p-8 bg-gray-800 rounded shadow">
+            <h1 class="text-3xl font-bold mb-6 text-center">Вход в аккаунт</h1>
+            <form action="#" method="POST">
+                <div class="mb-4">
+                    <label for="email" class="block mb-2 font-semibold">Электронная почта:</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 bg-gray-700 border border-gray-600 rounded" placeholder="Введите вашу почту">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block mb-2 font-semibold">Пароль:</label>
+                    <input type="password" id="password" name="password" class="w-full p-2 bg-gray-700 border border-gray-600 rounded" placeholder="Введите ваш пароль">
+                </div>
+                <button type="submit" class="w-full mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Войти</button>
+            </form>
+            <p class="text-center text-sm text-gray-400 mt-4">Нет аккаунта? <a href="#" class="text-blue-400 hover:underline">Зарегистрируйтесь</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4">
+        <div class="text-center">© 2024 PrimeFashion. Все права защищены.</div>
+    </footer>
+</body>
+</html>
